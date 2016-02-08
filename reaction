@@ -1,11 +1,25 @@
 #!/bin/bash
 #
-
-# copy clone-packages.sh so that any directory
-# can be specified for use in PACKAGE_DIR config.
-cp bin/clone-packages.sh /usr/local/bin/
-
+# Reaction Commerce CLI helpers
 #
-# example dev.settings
-#
-meteor --raw-logs --settings settings/dev.settings.json
+set -u
+set -e
+# by default runs settings/dev.settings.json
+# customize by creating settings/settings.json
+if [[ "$@" == "reset" ]]; then
+  bin/reset
+elif [[ "$@" == "pull" ]]; then
+  git pull && bin/clone-packages.sh
+elif [[ "$@" == "install" ]]; then
+  # copy clone-packages.sh so that any directory
+  # can be specified for use in PACKAGE_DIRS config.
+  cp bin/clone-packages.sh /usr/local/bin/
+  # copy reaction so that you don't need ./
+  cp reaction /usr/local/bin/reaction && chmod + /usr/local/bin/reaction
+  bin/install
+elif [[ "$@" == "test" ]]; then
+  VELOCITY_TEST_PACKAGES=1 meteor test-packages --driver-package velocity:html-reporter --velocity
+else
+  bin/run "$@"
+fi
+exit

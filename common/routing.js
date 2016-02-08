@@ -20,9 +20,3 @@ Router.map(function route() {
     path: "/(.*)"
   });
 });
-Router.map(function route() {
-  _.extend(Router.routes.index.options, {
-    // Just an example. You can put any Iron Router options here.
-    template: 'landingPro'
-  });
-});
