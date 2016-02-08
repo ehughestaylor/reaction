@@ -87,7 +87,6 @@ iron:location@1.0.11
 iron:middleware-stack@1.0.11
 iron:router@1.0.12
 iron:url@1.0.11
-jeremy:stripe@1.1.0
 jparker:crypto-core@0.1.0
 jparker:crypto-md5@0.1.1
 jparker:gravatar@0.4.1
@@ -122,7 +121,6 @@ oauth1@1.1.5
 oauth2@1.1.5
 observe-sequence@1.0.7
 ongoworks:bunyan-logger@2.5.0
-ongoworks:ddp-login@0.2.1
 ongoworks:security@1.3.0
 ongoworks:transliteration@0.1.1
 ordered-dict@1.0.4
@@ -134,7 +132,6 @@ rate-limit@1.0.0
 reactioncommerce:core@0.11.0
 reactioncommerce:core-theme@2.0.1
 reactioncommerce:default-theme@1.0.3
-reactioncommerce:launchdock-connect@0.1.5
 reactioncommerce:reaction-accounts@1.6.2
 reactioncommerce:reaction-analytics@1.2.1
 reactioncommerce:reaction-analytics-libs@1.1.0
